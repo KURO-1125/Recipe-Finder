@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECIPE FINDER</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>RECIPE FINDER</h1>
+    <div id="container">
+        <div id="Details">
+            <form id="details-form">
+                <label for="username">UserName - </label>
+                <input type="text" id="username" required placeholder="Enter Your Name">
+                <br><br>
+                <label for="recipename">RecipeName - </label>
+                <input type="text" id="recipename" required placeholder="Enter Recipe Name">
+                <br><br> 
+                <input type="submit" id="submit-btn">
+            </form>
+        </div>
+        <br><br><br>
+        <div id="display-area">
+            <button id="display-details">Show All Recipes</button>
+            <p id="RecipeName-display"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>   
+</body>
+</html>
