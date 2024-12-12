@@ -7,17 +7,24 @@ const recipeNameDisplay = document.getElementById("RecipeName-display");
 
 submitBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    localStorage.setItem("UserName",userName.value);
-    localStorage.setItem("RecipeName",recipeName.value)
+
+    const recipeDetails = {
+        userName: userName.value,
+        recipeName: recipeName.value,
+    };
+
+    // Converting and storing it in localStorage
+    localStorage.setItem("RecipeDetails", JSON.stringify(recipeDetails));
 
     detailsForm.reset();
 });
 
 displayBtn.addEventListener("click", () => {
-    if(localStorage.getItem("RecipeName")){
-        recipeNameDisplay.textContent = `Recipe Name : ${localStorage.getItem("RecipeName")} by ${localStorage.getItem("UserName")}`;
-    }
-    else{
+    const recipeDetails = JSON.parse(localStorage.getItem("RecipeDetails"));
+
+    if (recipeDetails && recipeDetails.recipeName) {
+        recipeNameDisplay.textContent = `Recipe Name : ${recipeDetails.recipeName} by ${recipeDetails.userName}`;
+    } else {
         recipeNameDisplay.textContent = "No Recipe Found";
     }
 });
