@@ -3,29 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RECIPE FINDER</title>
+    <title>Recipe Finder</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>RECIPE FINDER</h1>
-    <div id="container">
-        <div id="Details">
-            <form id="details-form">
-                <label for="username">UserName - </label>
-                <input type="text" id="username" required placeholder="Enter Your Name">
-                <br><br>
-                <label for="recipename">RecipeName - </label>
-                <input type="text" id="recipename" required placeholder="Enter Recipe Name">
-                <br><br> 
-                <input type="submit" id="submit-btn">
-            </form>
+    <header>
+        <h1>Recipe Finder</h1>
+    </header>
+    <main>
+        <h2>Welcome to Recipe Finder</h2>
+        <p>Discover new recipes and share your own creations.</p>
+        <div class="buttons">
+            <button><a href="AddRecipe.html" style="color: white;">Add Recipe</a></button>
+            <button><a href="SearchRecipe.html" style="color: white;">Search Recipe</a></button>
         </div>
-        <br><br><br>
-        <div id="display-area">
-            <button id="display-details">Show All Recipes</button>
-            <p id="RecipeName-display"></p>
-        </div>
-    </div>
-    <script src="script.js"></script>   
+    </main>
 </body>
 </html>
