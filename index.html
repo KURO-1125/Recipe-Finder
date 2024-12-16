@@ -4,19 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Finder</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Recipe Finder</h1>
-    </header>
-    <main>
-        <h2>Welcome to Recipe Finder</h2>
-        <p>Discover new recipes and share your own creations.</p>
-        <div class="buttons">
-            <button><a href="AddRecipe.html" style="color: white;">Add Recipe</a></button>
-            <button><a href="SearchRecipe.html" style="color: white;">Search Recipe</a></button>
-        </div>
-    </main>
+    <h1>WELCOME TO THE RECIPE FINDER</h1>
+
+    <button id="get-started">Get Started</button>
+    <p>Discover, create, and share your favorite recipes with ease! Recipe Finder is your ultimate destination for exploring delicious dishes, whether you're a beginner in the kitchen or a seasoned chef.</p>
+    <p> Our platform offers a seamless experience for finding the perfect recipe to satisfy any craving. From quick weekday meals to gourmet feasts, we've got something for everyone.</p>
+
+    <script>
+        document.getElementById("get-started").addEventListener("click", function() {
+            window.location.href = "LoginSignUp.html"; 
+        });
+    </script>
 </body>
 </html>

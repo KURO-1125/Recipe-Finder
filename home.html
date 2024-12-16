@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Finder</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+    <header>
+        <h1>Recipe Finder</h1>
+        <div class="menu">
+            <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
+            <div class="dropdown">
+                <a href="#" onclick="logout()">Logout</a> 
+            </div>
+        </div>
+    </header>
+    <main>
+        <h2>Welcome to Recipe Finder</h2>
+        <p>Discover new recipes and share your own creations.</p>
+        <div class="buttons">
+            <button onclick="window.location.href='AddRecipe.html'">Add Recipe</button>
+            <button onclick="window.location.href='SearchRecipe.html'">Search Recipe</button>
+        </div>
+    </main>
+
+    <script src="home.js"></script>
+</body>
+</html>

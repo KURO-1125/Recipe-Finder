@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECIPE FINDER</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container" id="main">
+        <div class="sign-up">
+            <form>
+                <h1>Create Account</h1>
+                <input type="text" name="UserName" placeholder="Enter UserName" required>
+                <input type="email" name="Email" placeholder="Enter Email-Id" required>
+                <input type="password" name="Pass" placeholder="Enter Password" required>
+                <div class="checkbox-container">
+                    <label for="admin"><input type="checkbox" name="admin" id="admin">Are you an admin?</label>
+                </div>
+                <button>Sign Up</button>
+            </form>
+        </div>
+        <div class="log-in">
+            <form>
+                <h1>LOG IN</h1>
+                <input type="email" name="Email" placeholder="Enter Email-Id" required>
+                <input type="password" name="Pass" placeholder="Enter Password" required>
+                <button>Log In</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-left">
+                    <h1>Welcome Back, Foodie!</h1>
+                    <p>Login to discover and share delicious recipes.</p>
+                    <button id="logIn" type="button">Log In</button>
+                </div>
+                <div class="overlay-right">
+                    <h1>Join Our Recipe Community!</h1>
+                    <p>Sign up to start sharing and discovering mouthwatering recipes.</p>
+                    <button id="signUp" type="button">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>
