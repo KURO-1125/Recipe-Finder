@@ -3,28 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe Finder</title>
+    <title>Profile and Recipes</title>
     <link rel="stylesheet" href="home.css">
 </head>
 <body>
     <header>
         <h1>Recipe Finder</h1>
         <div class="menu">
-            <button class="hamburger" onclick="toggleMenu()">&#9776;</button>
+            <div class="avatar" id="user-avatar" onclick="toggleMenu()">AB</div>
             <div class="dropdown">
-                <a href="#" onclick="logout()">Logout</a> 
+                <div id="user-name" class="dropdown-header"></div>
+                <a href="javascript:void(0)" onclick="editProfile()">Edit Profile</a>
+                <a href="javascript:void(0)" onclick="logout()">Logout</a>
             </div>
         </div>
     </header>
     <main>
-        <h2>Welcome to Recipe Finder</h2>
-        <p>Discover new recipes and share your own creations.</p>
         <div class="buttons">
-            <button onclick="window.location.href='AddRecipe.html'">Add Recipe</button>
-            <button onclick="window.location.href='SearchRecipe.html'">Search Recipe</button>
+            <button id="add-recipe-button" style="display: none;"  onclick="window.location.href='AddRecipe.html'">Add Recipe</button>
+            <button id="search-recipe-button" onclick="window.location.href='SearchRecipe.html'">Search Recipes</button>
+        </div>
+        <div id="recipe-cards" class="recipe-cards">
         </div>
     </main>
+    <div id="editProfileModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditProfileModal()"></span>
+            <h2>Edit Profile</h2>
+            <form onsubmit="saveProfile();">
+                <label for="editName">Name:</label>
+                <input type="text" id="editName" placeholder="Enter new name">
 
+                <label for="editEmail">Email:</label>
+                <input type="email" id="editEmail" placeholder="Enter new email">
+
+                <div id="profile-info"></div>
+
+                <button type="submit">Save Changes</button>
+                <button type="button" onclick="closeEditProfileModal()">Cancel</button>
+            </form>
+        </div>
+    </div>
     <script src="home.js"></script>
 </body>
 </html>

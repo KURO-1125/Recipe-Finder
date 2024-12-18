@@ -20,7 +20,6 @@ function displayRecipes(recipes) {
             <h3>${recipe.recipeName}</h3>
             <p>Tags: ${recipe.tags}</p>
             <p>Ingredients: ${recipe.ingredients}</p>
-            <p>Instructions: ${recipe.instructions}</p>
             <p>Preparation Time: ${recipe.preparationTime}</p>
             <p>Cuisine Type: ${recipe.cuisineType}</p>
             <img src="${recipe.imageURL}" alt="${recipe.recipeName}" style="width: 100px; height: auto;">
