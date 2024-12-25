@@ -1,0 +1,230 @@
+body {
+    font-family: 'Montserrat', sans-serif; 
+    margin: 0;
+    padding: 0;
+    background-color: #f6f5f7; 
+    color: #333; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    background-color: #ff4b2b; 
+    color: white;
+    padding: 15px 0;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    font-weight: bolder;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    transition: transform 0.3s ease;
+}
+
+header h1:hover {
+    transform: scale(1.05); 
+}
+
+
+main {
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+    background: #ffffff; 
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+
+.add-recipe {
+    margin: 20px 0;
+}
+
+.add-recipe h2 {
+    margin-bottom: 20px;
+    color: #ff4b2b; 
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #555; 
+}
+
+form input[type="text"],
+form input[type="number"],
+form textarea,
+form input[type="file"],
+select {
+    padding: 12px;
+    border: 1px solid #ccc; 
+    border-radius: 6px;
+    width: calc(100% - 24px);
+    background-color: #f9f9f9; 
+    color: #333; 
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form textarea:focus,
+select:focus {
+    border-color: #ff4b2b; 
+    box-shadow: 0 0 5px rgba(255, 75, 43, 0.5);
+    outline: none;
+}
+
+/* Button Styles */
+#submit-btn {
+    background-color: #ff4b2b; 
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 20px;
+    border: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#submit-btn:hover {
+    background-color: #ff3a1a; 
+    transform: translateY(-2px); 
+}
+
+.back-button {
+    background-color: #555; 
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;            
+    margin-top: 10px;
+    display: inline-block;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-button:hover {
+    background-color: #444; 
+    transform: translateY(-2px); 
+}
+
+
+@media (max-width: 600px) {
+    main {
+        padding: 20px;
+    }
+
+    form input[type="text"],
+    form input[type="number"],
+    form textarea,
+    select {
+        width: calc(100% - 24px); 
+    }
+}
+
+
+select {
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 16px;
+    padding: 12px;
+    border: 1px solid #ccc; 
+    border-radius: 6px;
+    background-color: #f9f9f9; 
+    color: #333; 
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+select option {
+    background-color: #ffffff; 
+    color: #333; 
+}
+
+select:focus { 
+    border-color: #ff4b2b; 
+    box-shadow: 0 0 5px rgba(255, 75, 43, 0.5);
+    outline: none; 
+}
+
+
+#preparation-time {
+    height: 40px;
+    width: 100%; 
+}
+
+
+#message-container {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+    display: none; 
+}
+
+
+.success {
+    background-color: rgba(76, 175, 80, 0.1); 
+    color: #4CAF50; 
+    border: 1px solid #4CAF50; 
+}
+
+
+.error {
+    background-color: rgba(244, 67, 54, 0.1); 
+    color: #F44336; 
+    border: 1px solid #F44336; 
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#message-container.show {
+    display: block; 
+    animation: fadeIn 0.5s ease; 
+}
+
+
+footer {
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+    color: #333; 
+    font-size: 14px;
+}
+
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em; 
+    }
+
+    main {
+        padding: 15px; 
+    }
+
+    #submit-btn,
+    .back-button {
+        padding: 10px; 
+        font-size: 14px; 
+    }
+}

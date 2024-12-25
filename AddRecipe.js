@@ -7,6 +7,8 @@ const tags = document.getElementById("tags");
 const imageUpload = document.getElementById("imageupload");
 const submitBtn = document.getElementById("submit-btn");
 
+
+
 function getRecipes() {
     const recipes = localStorage.getItem("Recipes");
     if (recipes) {
@@ -31,13 +33,36 @@ detailsForm.addEventListener("submit", (e) => {
     const tagsValue = tags.value.trim();
     const file = imageUpload.files[0];
 
-    if (recipeNameValue && ingredientsValue  && preparationTimeValue && cuisineTypeValue && tagsValue && file) {
+    const editIndex = document.getElementById("edit-index") ? document.getElementById("edit-index").value : null;
+
+    if (recipeNameValue && ingredientsValue && preparationTimeValue && cuisineTypeValue && tagsValue && file) {
         const reader = new FileReader();
         reader.onloadend = () => {
             const base64 = reader.result;
-            saveRecipe(recipeNameValue, ingredientsValue, preparationTimeValue, cuisineTypeValue, tagsValue, base64);
+            if (editIndex !== null) {
+                const recipes = getRecipes();
+                recipes[editIndex] = {
+                    recipeName: recipeNameValue,
+                    ingredients: ingredientsValue,
+                    preparationTime: preparationTimeValue,
+                    cuisineType: cuisineTypeValue,
+                    tags: tagsValue,
+                    imageURL: base64
+                };
+                localStorage.setItem("Recipes", JSON.stringify(recipes));
+                alert("Recipe Updated Successfully!");
+            } else {
+                saveRecipe(recipeNameValue, ingredientsValue, preparationTimeValue, cuisineTypeValue, tagsValue, base64);
+                alert("Recipe Saved Successfully!");
+            }
+
             detailsForm.reset();
-            alert("Recipe Saved Successfully");
+            if (editIndex !== null) {
+                document.getElementById("edit-index").remove();
+            }
+            setTimeout(() => {
+                window.location.href = "admin.html"; 
+            }, 1000); 
         };
         reader.readAsDataURL(file);
     } else {

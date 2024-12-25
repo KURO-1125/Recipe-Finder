@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile and Recipes</title>
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="admin.css">
 </head>
 <body>
     <header>
-        <h1>Recipe Finder</h1>
+        <h1>Culinary Compass</h1>
         <div class="menu">
             <div class="avatar" id="user-avatar" onclick="toggleMenu()">AB</div>
             <div class="dropdown">
@@ -21,13 +21,12 @@
     <main>
         <div class="buttons">
             <button id="add-recipe-button" style="display: none;"  onclick="window.location.href='AddRecipe.html'">Add Recipe</button>
-            <button id="search-recipe-button" onclick="window.location.href='SearchRecipe.html'">Search Recipes</button>
         </div>
         <div id="recipe-cards" class="recipe-cards">
         </div>
     </main>
     <div id="editProfileModal" class="modal" style="display: none;">
-        <div class="modal-content">
+        <div class="profile-modal-content">
             <span class="close" onclick="closeEditProfileModal()"></span>
             <h2>Edit Profile</h2>
             <form onsubmit="saveProfile();">
@@ -44,6 +43,30 @@
             </form>
         </div>
     </div>
-    <script src="home.js"></script>
+<div id="editRecipeModal" class="modal" style="display: none;">
+    <div class="recipe-modal-content">
+        <span class="close" onclick="closeEditRecipeModal()">&times;</span>
+        <h2>Edit Recipe</h2>
+        <form id="edit-details-form" onsubmit="saveEditedRecipe(event);">
+            <label for="recipename">Recipe Name:</label>
+            <input type="text" id="recipename" required placeholder="Enter Recipe Name">
+            
+            <label for="ingredients">Ingredients:</label>
+            <textarea id="ingredients" required placeholder="List of ingredients (one per line)"></textarea>
+            
+            <label for="preparation-time">Preparation Time (in Minutes):</label>
+            <input type="number" id="preparation-time" required placeholder="Enter Preparation Time">
+            
+            <label for="cuisine-type">Cuisine Type:</label>
+            <input type="text" id="cuisine-type" required placeholder="e.g. Italian, Mexican">
+            
+            <label for="tags">Tags:</label>
+            <input type="text" id="tags" required placeholder="eg. dessert , vegan">
+            
+            <input type="submit" value="Save Changes">
+        </form>
+    </div>
+</div>
+    <script src="admin.js"></script>
 </body>
 </html>

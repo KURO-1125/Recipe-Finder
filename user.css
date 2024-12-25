@@ -1,0 +1,323 @@
+body {
+    font-family: "Montserrat", sans-serif; 
+    margin: 0;
+    background-image: url(https://i.pinimg.com/originals/08/9b/ce/089bce0b11f9a94c850061e14843f511.jpg); 
+    background-size: cover;
+    padding: 0;
+    background-color: #f6f5f7; 
+    color: #333; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.recipe-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.recipe-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.recipe-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.recipe-card h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff4b2b;
+    margin-bottom: 10px;
+}
+
+.recipe-card p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+header {
+    background-color: #ff4b2b; 
+    color: white;
+    padding: 15px 0;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    font-weight: bolder;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    transition: transform 0.3s ease;
+}
+
+
+
+main {
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+    background: #ffffff; 
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #ff4b2b; 
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.search-container input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: calc(100% - 24px); /* Adjust width as needed */
+    margin-right: 10px; /* Space between input and button */
+}
+
+.search-container button {
+    background-color: #ff4b2b;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-container button:hover {
+    background-color: #ff3a1a;
+}
+
+.search-message {
+    margin-top: 10px;
+    font-size: 1.1em;
+    color: #333;
+    text-align: center;
+}
+.menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;  
+    top: 20px;  
+    right: 20px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #4caf50; /* Change to desired color */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.avatar:hover {
+    transform: scale(1.1);
+    background-color: #45a049; /* Change to desired hover color */
+    font-weight: bold;
+}
+
+.dropdown {
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    min-width: 250px;
+    right: 10px;
+    top: 60px;
+    z-index: 1000;
+    display: none;
+    font-family: "Montserrat", sans-serif;
+}
+
+.dropdown.show {
+    display: block;
+}
+
+.dropdown-header {
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+}
+
+.dropdown a {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+    position: relative; /* Position relative for arrow positioning */
+}
+
+.dropdown a::after {
+    content: ">";
+    position: absolute;
+    right: 15px; /* Position the arrow to the right */
+    color: #888; /* Arrow color */
+    font-weight: bold; /* Make the arrow bold */
+    transition: color 0.2s ease; /* Transition for hover effect */
+}
+
+.dropdown a:hover {
+    background-color: #ff3a1a; /* Change background on hover */
+    color: white; /* Change text color on hover */
+    font-weight: bold; /* Make text bold on hover */
+}
+
+.dropdown a:hover::after {
+    color: white; /* Change arrow color on hover */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    color: #333; 
+    font-size: 14px;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.7); 
+}
+
+.profile-modal-content {
+    background-color: #ffffff; 
+    margin: 10% auto; 
+    padding: 30px; 
+    border: none; 
+    border-radius: 12px; 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); 
+    width: 90%; 
+    max-width: 500px; 
+}
+
+.close {
+    color: #ff4b2b; 
+    float: right; 
+    font-size: 28px; 
+    font-weight: bold; 
+    cursor: pointer; 
+}
+
+.close:hover,
+.close:focus {
+    color: #d9534f; 
+    text-decoration: none; 
+}
+
+.profile-modal-content input {
+    width: 100%; 
+    padding: 12px; 
+    margin: 10px 0; 
+    border: 1px solid #ccc; 
+    border-radius: 6px; 
+    outline: none; 
+    transition: border-color 0.3s ease; 
+}
+
+.profile-modal-content input:focus {
+    border-color: #ff4b2b; 
+    box-shadow: 0 0 5px rgba(255, 75, 43, 0.5); 
+}
+
+.profile-modal-content button {
+    background-color: #ff4b2b; 
+    color: white; 
+    border: none; 
+    padding: 12px 20px; 
+    text-align: center; 
+    font-size: 16px;
+    margin: 10px 0; 
+    cursor: pointer; 
+    border-radius: 6px; 
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+
+.profile-modal-content button:hover {
+    background-color: #ff3a1a; 
+    transform: translateY(-2px); 
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2em; 
+    }
+
+    main {
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+
+    .search-container input {
+        padding: 10px; /* Adjust input padding for smaller screens */
+    }
+
+    .search-container button {
+        padding: 10px; /* Adjust button padding for smaller screens */
+    }
+
+    .profile-modal-content {
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+
+    .profile-modal-content input {
+        padding: 10px; /* Adjust input padding for smaller screens */
+    }
+
+    .profile-modal-content button {
+        padding: 10px; /* Adjust button padding for smaller screens */
+    }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culinary Compass - User Dashboard</title>
+    <link rel="stylesheet" href="user.css">
+</head>
+<body>
+    <header>
+        <h1>Culinary Compass</h1>
+        <div class="menu">
+            <div class="avatar" id="user-avatar" onclick="toggleMenu()">AB</div> 
+            <div class="dropdown" id="user-dropdown" style="display: none;">
+                <div id="user-name" class="dropdown-header"></div>
+                <a href="javascript:void(0)" onclick="editProfile()">Edit Profile</a>
+                <a href="javascript:void(0)" onclick="logout()">Logout</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="search-section">
+            <h2>Welcome to the Culinary Compass!</h2>
+            <p>"Find the perfect recipe! Enter ingredients or dish name below.🍴✨</p>
+            
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search for recipes..." />
+                <button id="searchButton" onclick="performSearch()">Search</button>
+            </div>
+            <div id="searchMessage" class="search-message"></div> 
+        </section>
+
+        <section id="recipe-cards" class="recipe-cards">
+        </section>
+    </main>
+
+    <div id="editProfileModal" class="modal" style="display: none;">
+        <div class="profile-modal-content">
+            <span class="close" onclick="closeEditProfileModal()">&times;</span>
+            <h2>Edit Profile</h2>
+            <form id="edit-profile-form" onsubmit="saveProfile(event);">
+                <label for="editName">Name:</label>
+                <input type="text" id="editName" placeholder="Enter new name" required>
+
+                <label for="editEmail">Email:</label>
+                <input type="email" id="editEmail" placeholder="Enter new email" required>
+
+                <button type="submit">Save Changes</button>
+                <button type="button" onclick="closeEditProfileModal()">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="user.js"></script> 
+</body>
+</html>

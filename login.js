@@ -2,6 +2,30 @@ const signUpBtn = document.getElementById("signUp");
 const logInBtn = document.getElementById("logIn");
 const main = document.getElementById("main");
 
+const signUpContainer = document.getElementById("signup-container");
+const logInContainer = document.getElementById("login-container");
+
+function showSignUpMessage(message, type) {
+    signUpContainer.textContent = message;
+    signUpContainer.style.display = "block";
+    signUpContainer.classList.remove("error", "success");
+    signUpContainer.classList.add(type);
+
+    setTimeout(() => {
+        signUpContainer.style.display = "none";
+    }, 2000);
+}
+
+function showLoginInMessage(message, type) {
+    logInContainer.textContent = message;
+    logInContainer.style.display = "block";
+    logInContainer.classList.remove("error", "success");
+    logInContainer.classList.add(type); 
+
+    setTimeout(() => {
+        logInContainer.style.display = "none";
+    }, 2000);
+}
 
 signUpBtn.addEventListener("click", () => {
     main.classList.add("right-panel-active");
@@ -13,8 +37,8 @@ logInBtn.addEventListener("click", () => {
 
 
 const currentUser = JSON.parse(localStorage.getItem("currentUser"));
-if (currentUser) {
-    window.location.href = "home.html";
+if (currentUser && currentUser.value) {
+    window.location.href = "admin.html";
 }
 
 
@@ -28,7 +52,7 @@ signUpForm.addEventListener("submit", (e) => {
     const isAdmin = signUpForm.querySelector('#admin').checked;
 
     if (!userName || !email || !password) {
-        alert("Please fill all the fields!");
+        showSignUpMessage("Please fill all the fields!","error");
         return;
     }
 
@@ -36,15 +60,15 @@ signUpForm.addEventListener("submit", (e) => {
     const userExists = users.some((user) => user.email === email);
 
     if (userExists) {
-        alert("Email already exists! Please log in.");
+        showSignUpMessage("Email already exists! Please log in.","error");
         return;
     }
 
     const newUser = { userName, email, password, isAdmin };
     users.push(newUser);
     localStorage.setItem("users", JSON.stringify(users));
-    alert("Account created successfully! Please log in.");
     signUpForm.reset();
+    logInBtn.click();
 });
 
 
@@ -56,7 +80,7 @@ logInForm.addEventListener("submit", (e) => {
     const password = logInForm.querySelector('input[name="Pass"]').value.trim();
 
     if (!email || !password) {
-        alert("Please fill all the fields!");
+        showLoginInMessage("Please fill all the fields!", "error");
         return;
     }
 
@@ -65,11 +89,12 @@ logInForm.addEventListener("submit", (e) => {
 
     if (currentUser) {
         localStorage.setItem("currentUser", JSON.stringify(currentUser));
-        alert(`Welcome back, ${currentUser.userName}!`);
-        window.location.href = "home.html";
+        showLoginInMessage("Login successful! Redirecting to home page...", "success");
+        setTimeout(() => {
+            window.location.href = "admin.html";
+        }, 1000);
     } else {
-        alert("Invalid email or password! Please try again.");
+        showLoginInMessage("Invalid email or password! Please try again.", "error");
     }
 });
-
 

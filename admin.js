@@ -1,15 +1,12 @@
 function checkUserRole() {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
     const addRecipeButton = document.getElementById("add-recipe-button");
-    const searchRecipeButton = document.getElementById("search-recipe-button");
 
     if (currentUser && currentUser.isAdmin) {
         addRecipeButton.style.display = "block";
-        searchRecipeButton.style.display = "none"; 
         displayAllRecipes(); 
     } else {
-        addRecipeButton.style.display = "none"; 
-        searchRecipeButton.style.display = "block"; 
+        window.location.href = "user.html";
     }
 }
 checkUserRole();
@@ -41,7 +38,7 @@ function displayAllRecipes() {
     const recipeCardsContainer = document.getElementById("recipe-cards");
     recipeCardsContainer.innerHTML = ""; 
 
-    recipes.forEach(recipe => {
+    recipes.forEach((recipe, index) => {
         const recipeCard = document.createElement("div");
         recipeCard.classList.add("recipe-card");
         recipeCard.innerHTML = `
@@ -51,9 +48,50 @@ function displayAllRecipes() {
             <p>Preparation Time: ${recipe.preparationTime}</p>
             <p>Cuisine Type: ${recipe.cuisineType}</p>
             <img src="${recipe.imageURL}" alt="${recipe.recipeName}" style="width: 100px; height: auto;">
+            <button onclick="editRecipe(${index})">Edit</button>
+            <button onclick="deleteRecipe(${index})">Delete</button>
         `;
         recipeCardsContainer.appendChild(recipeCard);
     });
+}
+
+
+function editRecipe(index) {
+    const recipes = getRecipes();
+    const recipe = recipes[index];
+
+    document.getElementById("recipename").value = recipe.recipeName;
+    document.getElementById("ingredients").value = recipe.ingredients;
+    document.getElementById("preparation-time").value = recipe.preparationTime;
+    document.getElementById("cuisine-type").value = recipe.cuisineType;
+    document.getElementById("tags").value = recipe.tags;
+
+    // Store the index in a hidden input
+    const hiddenIndexInput = document.createElement("input");
+    hiddenIndexInput.type = "hidden";
+    hiddenIndexInput.id = "edit-index";
+    hiddenIndexInput.value = index;
+    document.getElementById("edit-details-form").appendChild(hiddenIndexInput);
+
+    
+    document.getElementById("editRecipeModal").style.display = "block";
+}
+
+function closeEditRecipeModal() {
+    document.getElementById("editRecipeModal").style.display = "none"; 
+    const editForm = document.getElementById("edit-details-form");
+    editForm.reset(); // Reset the form
+    const hiddenIndexInput = document.getElementById("edit-index");
+    if (hiddenIndexInput) {
+        hiddenIndexInput.remove(); // Remove hidden input
+    }
+}
+
+function deleteRecipe(index) {
+    const recipes = getRecipes();
+    recipes.splice(index, 1); 
+    localStorage.setItem("Recipes", JSON.stringify(recipes)); 
+    displayAllRecipes(); 
 }
 
 

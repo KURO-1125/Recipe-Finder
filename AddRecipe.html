@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe Finder - Add Recipe</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Culinary Compass - Add Recipe</title>
+    <link rel="stylesheet" href="AddRecipe.css">
 </head>
 <body>
     <header>
-        <h1>Recipe Finder</h1>
+        <h1>Culinary Compass</h1>
     </header>
     <main>
         <section id="container">
             <div class="add-recipe">
-                <h2>Submit a Recipe</h2>
+                <h2><u>Add a Recipe</u></h2>
                 <form id="details-form">
                     <label for="recipename">Recipe Name:</label>
                     <input type="text" id="recipename" required placeholder="Enter Recipe Name">
@@ -21,14 +21,17 @@
                     <label for="ingredients">Ingredients:</label>
                     <textarea id="ingredients" required placeholder="List of ingredients (one per line)"></textarea>
                     <br><br>
-                    <label for="instructions">Instructions:</label>
-                    <textarea id="instructions" required placeholder="Cooking instructions"></textarea>
-                    <br><br>
-                    <label for="preparation-time">Preparation Time:</label>
-                    <input type="text" id="preparation-time" required placeholder="e.g. 30 minutes">
+                    <label for="preparation-time">Preparation Time (in Minutes):</label>
+                    <input type="number" id="preparation-time" required placeholder="Enter Preparation Time">
                     <br><br>
                     <label for="cuisine-type">Cuisine Type:</label>
                     <input type="text" id="cuisine-type" required placeholder="e.g. Italian, Mexican">
+                    <br><br>
+                    <label for="food-category">Select Your Cuisine Category</label>
+                    <select id="food-category">
+                        <option value="">Veg</option>
+                        <option value="">Non-Veg</option>
+                    </select>
                     <br><br>
                     <label for="tags">Tags:</label>
                     <input type="text" id="tags" required placeholder="eg. dessert , vegan">
@@ -36,13 +39,14 @@
                     <label for="imageupload">Upload Recipe Image:</label>
                     <input type="file" id="imageupload" required>
                     <br><br>
-                    <input type="submit" id="submit-btn" value="Submit Recipe">
+                    
+                    <input type="submit" id="submit-btn" value="Add Recipe">
                 </form>
             </div>
         </section>
         <br><br>
-        <button class="back-button" onclick="location.href='home.html'">Back to Home</button>
-    </main>
+        <button class="back-button" onclick="location.href='admin.html'">Back to Home</button>
+    </main>d
     <script src="AddRecipe.js"></script>
 </body>
 </html>
