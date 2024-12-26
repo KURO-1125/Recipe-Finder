@@ -66,7 +66,7 @@ function editRecipe(index) {
     document.getElementById("cuisine-type").value = recipe.cuisineType;
     document.getElementById("tags").value = recipe.tags;
 
-    // Store the index in a hidden input
+    
     const hiddenIndexInput = document.createElement("input");
     hiddenIndexInput.type = "hidden";
     hiddenIndexInput.id = "edit-index";
@@ -80,10 +80,10 @@ function editRecipe(index) {
 function closeEditRecipeModal() {
     document.getElementById("editRecipeModal").style.display = "none"; 
     const editForm = document.getElementById("edit-details-form");
-    editForm.reset(); // Reset the form
+    editForm.reset(); 
     const hiddenIndexInput = document.getElementById("edit-index");
     if (hiddenIndexInput) {
-        hiddenIndexInput.remove(); // Remove hidden input
+        hiddenIndexInput.remove(); 
     }
 }
 
