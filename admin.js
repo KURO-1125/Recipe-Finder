@@ -48,8 +48,9 @@ function displayAllRecipes() {
             <p>Preparation Time: ${recipe.preparationTime}</p>
             <p>Cuisine Type: ${recipe.cuisineType}</p>
             <img src="${recipe.imageURL}" alt="${recipe.recipeName}" style="width: 100px; height: auto;">
+            <div class="button-container">
             <button onclick="editRecipe(${index})">Edit</button>
-            <button onclick="deleteRecipe(${index})">Delete</button>
+            <button onclick="deleteRecipe(${index})">Delete</button></div>
         `;
         recipeCardsContainer.appendChild(recipeCard);
     });

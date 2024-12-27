@@ -99,8 +99,8 @@ h2 {
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 6px;
-    width: calc(100% - 24px); /* Adjust width as needed */
-    margin-right: 10px; /* Space between input and button */
+    width: calc(100% - 24px); 
+    margin-right: 10px; 
 }
 
 .search-container button {
@@ -136,7 +136,7 @@ h2 {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #4caf50; /* Change to desired color */
+    background-color: #4caf50; 
     color: white;
     display: flex;
     align-items: center;
@@ -149,7 +149,7 @@ h2 {
 
 .avatar:hover {
     transform: scale(1.1);
-    background-color: #45a049; /* Change to desired hover color */
+    background-color: #45a049; 
     font-weight: bold;
 }
 
@@ -187,26 +187,26 @@ h2 {
     text-decoration: none;
     font-size: 14px;
     transition: background-color 0.2s ease;
-    position: relative; /* Position relative for arrow positioning */
+    position: relative; 
 }
 
 .dropdown a::after {
     content: ">";
     position: absolute;
-    right: 15px; /* Position the arrow to the right */
-    color: #888; /* Arrow color */
-    font-weight: bold; /* Make the arrow bold */
-    transition: color 0.2s ease; /* Transition for hover effect */
+    right: 15px; 
+    color: #888;
+    font-weight: bold; 
+    transition: color 0.2s ease; 
 }
 
 .dropdown a:hover {
-    background-color: #ff3a1a; /* Change background on hover */
-    color: white; /* Change text color on hover */
-    font-weight: bold; /* Make text bold on hover */
+    background-color: #ff3a1a; 
+    color: white; 
+    font-weight: bold; 
 }
 
 .dropdown a:hover::after {
-    color: white; /* Change arrow color on hover */
+    color: white; 
 }
 
 footer {
@@ -220,7 +220,7 @@ footer {
     font-size: 14px;
 }
 
-/* Modal Styles */
+
 .modal {
     display: none; 
     position: fixed; 
@@ -291,33 +291,33 @@ footer {
     transform: translateY(-2px); 
 }
 
-/* Media Queries for Responsive Design */
+
 @media (max-width: 600px) {
     header h1 {
         font-size: 2em; 
     }
 
     main {
-        padding: 20px; /* Adjust padding for smaller screens */
+        padding: 20px;
     }
 
     .search-container input {
-        padding: 10px; /* Adjust input padding for smaller screens */
+        padding: 10px; 
     }
 
     .search-container button {
-        padding: 10px; /* Adjust button padding for smaller screens */
+        padding: 10px; 
     }
 
     .profile-modal-content {
-        padding: 20px; /* Adjust padding for smaller screens */
+        padding: 20px; 
     }
 
     .profile-modal-content input {
-        padding: 10px; /* Adjust input padding for smaller screens */
+        padding: 10px; 
     }
 
     .profile-modal-content button {
-        padding: 10px; /* Adjust button padding for smaller screens */
+        padding: 10px;
     }
 }

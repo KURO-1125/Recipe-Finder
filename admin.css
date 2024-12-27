@@ -147,6 +147,12 @@ button:focus {
   gap: 20px;
   padding: 20px;
 }
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: auto; 
+}
 
 .recipe-card {
   background-color: white;
@@ -160,6 +166,8 @@ button:focus {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .recipe-card:hover {

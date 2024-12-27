@@ -86,7 +86,6 @@ select:focus {
     outline: none;
 }
 
-/* Button Styles */
 #submit-btn {
     background-color: #ff4b2b; 
     color: white;
